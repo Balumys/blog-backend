@@ -33,9 +33,9 @@
         <div class="col-lg-8">
             <div class="main_blog_details">
               {% if post.image_url %}
-                <img class="img-fluid" src="{{ post.image_url }}" alt="">
+                <img class="img-fluid" src="{{ post.image_url }}" alt="post picture">
               {% else %}
-                <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="">
+                <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="post picture">
               {% endif %}
                 <h4>{{post.title}}</h4>
                 <div class="user_details">
@@ -182,7 +182,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </div>
   </footer>
   <!--================ End Footer Area =================-->
-
-  <script src="{% static 'scripts.js'%}"></script>
 {% endblock %}
 </body>
