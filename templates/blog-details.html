@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+  {% block title %}
+    {{ post.title }} - Blog Details
+  {% endblock %}
 <body>
 {% block content %}
   <!--================ Hero sm Banner start =================-->
