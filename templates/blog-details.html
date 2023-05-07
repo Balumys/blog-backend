@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 
-  {% block title %}
-    {{ post.title }} - Blog Details
-  {% endblock %}
+{% block title %}
+  {{ post.title }} - Blog Details
+{% endblock %}
 
   {% block content %}
     <!--================ Hero sm Banner start =================-->
@@ -36,17 +36,17 @@
                   <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="post picture">
                 {% endif %}
                   <h4>{{post.title}}</h4>
-                  <div class="user_details">
-                    <div class="mt-sm-0 mt-3">
-                      <div class="media">
-                        <div class="media-body">
-                          <h5>{{ post.author }}</h5>
-                          <p>{{ post.published_at }}</p>
+                    <div class="user_details">
+                      <div class="mt-sm-0 mt-3">
+                        <div class="media">
+                          <div class="media-body">
+                            <h5>{{ post.author }}</h5>
+                            <p>{{ post.published_at }}</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                <p>{{ post.text }}</p>
+                    <p>{{ post.text }}</p>
                  <div class="news_d_footer flex-column flex-sm-row">
                    <a href="#"><span class="align-middle mr-2" style="color:red"><i class="ti-heart"></i></span>{{ post.likes_amount }} people like this</a>
                    <a class="justify-content-sm-center ml-sm-auto mt-sm-0 mt-2" href="#"><span class="align-middle mr-2"><i class="ti-themify-favicon"></i></span>{{ post.comments|length }} Comments</a>
@@ -60,24 +60,24 @@
                 </div>
                   <div class="comments-area">
                       <h4>{{ post.comments|length }} Comments</h4>
-                    {% for comment in post.comments %}
-                      <div class="comment-list">
-                          <div class="single-comment justify-content-between d-flex">
-                              <div class="user justify-content-between d-flex">
-                                  <div class="desc">
-                                      <h5><a href="#">{{ comment.author }}</a></h5>
-                                      <p class="date">{{ comment.published_at }}</p>
-                                      <p class="comment">
-                                          {{ comment.text }}
-                                      </p>
-                                  </div>
-                              </div>
-                              <div class="reply-btn">
-                                      <a href="" class="btn-reply text-uppercase">reply</a>
-                              </div>
-                          </div>
-                      </div>
-                    {% endfor %}
+                      {% for comment in post.comments %}
+                        <div class="comment-list">
+                            <div class="single-comment justify-content-between d-flex">
+                                <div class="user justify-content-between d-flex">
+                                    <div class="desc">
+                                        <h5><a href="#">{{ comment.author }}</a></h5>
+                                        <p class="date">{{ comment.published_at }}</p>
+                                        <p class="comment">
+                                            {{ comment.text }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="reply-btn">
+                                        <a href="" class="btn-reply text-uppercase">reply</a>
+                                </div>
+                            </div>
+                        </div>
+                      {% endfor %}
                   </div>
           </div>
 
